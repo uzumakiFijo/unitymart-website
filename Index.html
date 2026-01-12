@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnityMart for Store Owners - Grow Your Indian Grocery Business in Ireland</title>
+    <meta name="description" content="Join UnityMart and reach 50,000+ Indian customers across Ireland. List your store, promote offers, and grow your business. Starting at just €19/month.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF9800;
+            --primary-dark: #F57C00;
+            --primary-light: #FFB74D;
+            --success: #4CAF50;
+            --text-dark: #212121;
+            --text-light: #757575;
+            --bg-light: #F5F5F5;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--success);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 8rem 2rem 6rem;
+            margin-top: 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-lg);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--white);
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: var(--bg-light);
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .problem-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Solution Section */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .solution-card {
+            background: linear-gradient(135deg, var(--white) 0%, var(--bg-light) 100%);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-left-width: 8px;
+        }
+
+        .solution-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .solution-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .solution-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--white);
+        }
+
+        .pricing-section .section-header h2,
+        .pricing-section .section-header p {
+            color: var(--white);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .pricing-card.featured {
+            border: 4px solid var(--primary);
+            transform: scale(1.05);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .pricing-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .pricing-price span {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .pricing-description {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--bg-light);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features .check {
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .pricing-features .cross {
+            color: var(--text-light);
+        }
+
+        .pricing-button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .pricing-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .pricing-card.featured .pricing-button {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background: var(--bg-light);
+        }
+
+        .comparison-table {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-top: 2rem;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--bg-light);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background: var(--bg-light);
+        }
+
+        .comparison-table .feature-name {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .comparison-table .check-icon {
+            color: var(--success);
+            font-size: 1.3rem;
+        }
+
+        .comparison-table .cross-icon {
+            color: var(--text-light);
+            font-size: 1.3rem;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-top: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-section .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            font-size: 1.2rem;
+            padding: 1.25rem 3rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--bg-light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+
+        .faq-question i {
+            color: var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .comparison-table {
+                overflow-x: auto;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .scroll-animate.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Unity<span>Mart</span></a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#problem">The Problem</a></li>
+                <li><a href="#solution">Our Solution</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="cta-button">Get Started Free</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in-up">
+            <h1>Reach 50,000+ Indian Customers in Ireland</h1>
+            <p class="subtitle">Join UnityMart and grow your Indian grocery business with Ireland's #1 Indian store finder app</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Indian Community</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">€19</span>
+                    <span class="stat-label">Starting Price/Month</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">3 Months</span>
+                    <span class="stat-label">FREE Trial</span>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#pricing" class="btn-primary">
+                    <i class="fas fa-rocket"></i> Start Free Trial
+                </a>
+                <a href="#demo" class="btn-secondary">
+                    <i class="fas fa-play-circle"></i> Watch Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section" id="problem">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2>Are You Struggling With These Problems?</h2>
+                <p>Most Indian store owners in Ireland face these challenges every day</p>
+            </div>
+
+            <div class="problems-grid">
+                <div class="problem-card scroll-animate">
+                    <div class="problem-icon">😔</div>
+                    <h3>Customers Can't Find You</h3>
+                    <p>New Indian families move to Ireland but don't know your store exists. They drive past without stopping.</p>
+                </div>
+
+                <div class="problem-card scroll-animate">
+                    <div class="problem-icon">📞</div>
+                    <h3>Constant Phone Calls</h3>
+                    <p>"Do you have fresh meat today?" "What time do you close?" Same questions, 50 times a day.</p>
+                </div>
+
+                <div class="problem-card scroll-animate">
+                    <div class="problem-icon">💰</div>
+                    <h3>Wasted Fresh Meat</h3>
+                    <p>You buy fresh chicken but customers don't know it arrived. Meat goes unsold and you lose money.</p>
+                </div>
+
+                <div class="problem-card scroll-animate">
+                    <div class="problem-icon">📣</div>
+                    <h3>No Way to Promote Offers</h3>
+                    <p>You have great deals but no easy way to tell customers. WhatsApp groups aren't enough.</p>
+                </div>
+
+                <div class="problem-card scroll-animate">
+                    <div class="problem-icon">🏪</div>
+                    <h3>Losing to Bigger Stores</h3>
+                    <p>Large supermarkets have websites and apps. Your small store gets left behind.</p>
+                </div>
+
+                <div class="problem-card scroll-animate">
+                    <div class="problem-icon">⏰</div>
+                    <h3>Customers Come at Wrong Times</h3>
+                    <p>People show up when you're closed or call during busy hours. Frustrating for everyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2>UnityMart Solves All These Problems</h2>
+                <p>One simple app that brings customers to your door</p>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-card scroll-animate">
+                    <div class="solution-icon">📍</div>
+                    <h3>Get Found by Thousands</h3>
+                    <p>Your store appears on the map when customers search "Indian store near me". They see your location, hours, and features instantly.</p>
+                </div>
+
+                <div class="solution-card scroll-animate">
+                    <div class="solution-icon">🥩</div>
+                    <h3>Update Fresh Meat Availability</h3>
+                    <p>Click one button to tell customers "Fresh chicken arrived!" They get notified immediately and rush to your store.</p>
+                </div>
+
+                <div class="solution-card scroll-animate">
+                    <div class="solution-icon">🔥</div>
+                    <h3>Promote Your Offers</h3>
+                    <p>Post "20% off Basmati rice" and reach 10,000+ people instantly. No printing flyers, no WhatsApp spam.</p>
+                </div>
+
+                <div class="solution-card scroll-animate">
+                    <div class="solution-icon">💳</div>
+                    <h3>Digital Coupons</h3>
+                    <p>Create discount coupons customers can claim in the app. Track redemptions and see what works.</p>
+                </div>
+
+                <div class="solution-card scroll-animate">
+                    <div class="solution-icon">⭐</div>
+                    <h3>Build Your Reputation</h3>
+                    <p>Get reviews from happy customers. New customers see 5-star ratings and choose your store over competitors.</p>
+                </div>
+
+                <div class="solution-card scroll-animate">
+                    <div class="solution-icon">📊</div>
+                    <h3>See What Works</h3>
+                    <p>Dashboard shows how many people viewed your store, called you, or got directions. Make smarter business decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2>Everything You Need to Grow</h2>
+                <p>Powerful features designed specifically for Indian grocery stores</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Map Listing</h3>
+                    <p>Appear on the map with directions</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">📸</div>
+                    <h3>Photo Gallery</h3>
+                    <p>Show your store and products</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">🕐</div>
+                    <h3>Opening Hours</h3>
+                    <p>Customers know when you're open</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">📞</div>
+                    <h3>Click-to-Call</h3>
+                    <p>One tap to call your store</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">✅</div>
+                    <h3>Halal Certification</h3>
+                    <p>Show your halal badge</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Delivery Info</h3>
+                    <p>Let customers know you deliver</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">🅿️</div>
+                    <h3>Parking Info</h3>
+                    <p>Show parking availability</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">🌶️</div>
+                    <h3>Regional Products</h3>
+                    <p>Tag South/North Indian items</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Push Notifications</h3>
+                    <p>Alert customers about offers</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">💬</div>
+                    <h3>Customer Reviews</h3>
+                    <p>Build trust with ratings</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">📈</div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Track views, calls, directions</p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">🎟️</div>
+                    <h3>Coupon System</h3>
+                    <p>Create and track coupons</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple, Affordable Pricing</h2>
+                <p>Choose the plan that fits your business. All plans include 3 months FREE trial!</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- FREE Plan -->
+                <div class="pricing-card scroll-animate">
+                    <h3>FREE</h3>
+                    <div class="pricing-price">
+                        €0<span>/month</span>
+                    </div>
+                    <p class="pricing-description">Perfect for getting started</p>
+                    
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Basic listing on map</li>
+                        <li><span class="check">✓</span> Store name & address</li>
+                        <li><span class="check">✓</span> Phone number</li>
+                        <li><span class="check">✓</span> Opening hours</li>
+                        <li><span class="check">✓</span> 3 photos</li>
+                        <li><span class="check">✓</span> Customer reviews</li>
+                        <li><span class="cross">✗</span> Fresh meat updates</li>
+                        <li><span class="cross">✗</span> Offers & coupons</li>
+                        <li><span class="cross">✗</span> Analytics</li>
+                        <li><span class="cross">✗</span> Priority placement</li>
+                    </ul>
+
+                    <a href="#contact" class="pricing-button">Get Started Free</a>
+                </div>
+
+                <!-- BASIC Plan -->
+                <div class="pricing-card scroll-animate">
+                    <h3>BASIC</h3>
+                    <div class="pricing-price">
+                        €19<span>/month</span>
+                    </div>
+                    <p class="pricing-description">For small stores (1 location)</p>
+                    
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Everything in FREE</li>
+                        <li><span class="check">✓</span> Unlimited photos</li>
+                        <li><span class="check">✓</span> Fresh meat updates</li>
+                        <li><span class="check">✓</span> 5 offers per month</li>
+                        <li><span class="check">✓</span> 3 coupons per month</li>
+                        <li><span class="check">✓</span> Featured in "Nearby Stores"</li>
+                        <li><span class="check">✓</span> Basic analytics</li>
+                        <li><span class="check">✓</span> Email support</li>
+                        <li><span class="cross">✗</span> Priority placement</li>
+                        <li><span class="cross">✗</span> Featured offers</li>
+                    </ul>
+
+                    <a href="#contact" class="pricing-button">Start 3-Month Free Trial</a>
+                </div>
+
+                <!-- PRO Plan (Featured) -->
+                <div class="pricing-card featured scroll-animate">
+                    <div class="pricing-badge">MOST POPULAR</div>
+                    <h3>PRO</h3>
+                    <div class="pricing-price">
+                        €49<span>/month</span>
+                    </div>
+                    <p class="pricing-description">For growing stores (1-2 locations)</p>
+                    
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Everything in BASIC</li>
+                        <li><span class="check">✓</span> Unlimited offers</li>
+                        <li><span class="check">✓</span> Unlimited coupons</li>
+                        <li><span class="check">✓</span> Priority search placement</li>
+                        <li><span class="check">✓</span> Featured offers (1/week)</li>
+                        <li><span class="check">✓</span> Advanced analytics</li>
+                        <li><span class="check">✓</span> Customer insights</li>
+                        <li><span class="check">✓</span> SMS notifications</li>
+                        <li><span class="check">✓</span> Delivery management</li>
+                        <li><span class="check">✓</span> Phone support</li>
+                    </ul>
+
+                    <a href="#contact" class="pricing-button">Start 3-Month Free Trial</a>
+                </div>
+
+                <!-- PREMIUM Plan -->
+                <div class="pricing-card scroll-animate">
+                    <h3>PREMIUM</h3>
+                    <div class="pricing-price">
+                        €99<span>/month</span>
+                    </div>
+                    <p class="pricing-description">For large stores (3+ locations)</p>
+                    
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Everything in PRO</li>
+                        <li><span class="check">✓</span> Top placement (always first)</li>
+                        <li><span class="check">✓</span> Unlimited featured offers</li>
+                        <li><span class="check">✓</span> Banner ads on home screen</li>
+                        <li><span class="check">✓</span> Multi-location management</li>
+                        <li><span class="check">✓</span> API access</li>
+                        <li><span class="check">✓</span> White-label option</li>
+                        <li><span class="check">✓</span> Dedicated account manager</li>
+                        <li><span class="check">✓</span> Custom integrations</li>
+                        <li><span class="check">✓</span> Priority 24/7 support</li>
+                    </ul>
+
+                    <a href="#contact" class="pricing-button">Contact Sales</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; color: white;">
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;">🎉 <strong>Special Launch Offer:</strong> First 50 stores get 50% off for 6 months!</p>
+                <p style="font-size: 1rem; opacity: 0.9;">No credit card required for free trial • Cancel anytime • No hidden fees</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2>Compare All Plans</h2>
+                <p>See exactly what you get with each plan</p>
+            </div>
+
+            <div class="comparison-table scroll-animate">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>FREE</th>
+                            <th>BASIC</th>
+                            <th>PRO</th>
+                            <th>PREMIUM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Map Listing</td>
+                            <td><i class="fas fa-check check-icon"></i></td>
+                            <td><i class="fas fa-check check-icon"></i></td>
+                            <td><i class="fas fa-check check-icon"></i></td>
+                            <td><i class="fas fa-check check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Photos</td>
+                            <td>3</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Fresh Meat Updates</td>
+                            <td><i class="fas fa-times cross-icon"></i></td>
+                            <td><i class="fas fa-check check-icon"></i></td>
+                            <td><i class="fas fa-check check-icon"></i></td>
+                            <td><i class="fas fa-check check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Offers per Month</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Coupons per Month</td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Featured Offers</td>
+                            <td><i class="fas fa-times cross-icon"></i></td>
+                            <td><i class="fas fa-times cross-icon"></i></td>
+                            <td>1/week</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Priority Placement</td>
+                            <td><i class="fas fa-times cross-icon"></i></td>
+                            <td><i class="fas fa-times cross-icon"></i></td>
+                            <td><i class="fas fa-check check-icon"></i></td>
+                            <td>Top (Always First)</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Analytics</td>
+                            <td>Basic</td>
+                            <td>Basic</td>
+                            <td>Advanced</td>
+                            <td>Advanced + API</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Customer Notifications</td>
+                            <td><i class="fas fa-times cross-icon"></i></td>
+                            <td>Email</td>
+                            <td>Email + SMS</td>
+                            <td>Email + SMS + Push</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Multi-Location</td>
+                            <td><i class="fas fa-times cross-icon"></i></td>
+                            <td><i class="fas fa-times cross-icon"></i></td>
+                            <td><i class="fas fa-times cross-icon"></i></td>
+                            <td><i class="fas fa-check check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Support</td>
+                            <td>Community</td>
+                            <td>Email</td>
+                            <td>Phone + Email</td>
+                            <td>24/7 Priority</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Dedicated Manager</td>
+                            <td><i class="fas fa-times cross-icon"></i></td>
+                            <td><i class="fas fa-times cross-icon"></i></td>
+                            <td><i class="fas fa-times cross-icon"></i></td>
+                            <td><i class="fas fa-check check-icon"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2>What Store Owners Say</h2>
+                <p>Real results from real Indian grocery stores in Ireland</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card scroll-animate">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        "Before UnityMart, I was getting 5-10 calls every day asking 'Do you have fresh chicken?' Now I just update the app and customers come automatically. My meat sales increased by 40% in 2 months!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RS</div>
+                        <div class="author-info">
+                            <h4>Rajesh Sharma</h4>
+                            <p>Owner, Spice India Drumcondra</p>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card scroll-animate">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        "I was skeptical about paying €19/month, but after the free trial I saw 50+ new customers found us through the app. The coupon feature alone brought in €500 extra revenue in the first month. Best investment ever!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PM</div>
+                        <div class="author-info">
+                            <h4>Priya Menon</h4>
+                            <p>Owner, Kerala Store Phibsborough</p>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card scroll-animate">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        "The analytics dashboard is amazing! I can see exactly when customers are searching for stores and plan my fresh meat deliveries accordingly. No more wasted stock. UnityMart paid for itself in the first week."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AK</div>
+                        <div class="author-info">
+                            <h4>Amit Kumar</h4>
+                            <p>Owner, Desi Bazaar Blanchardstown</p>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Grow Your Business?</h2>
+            <p>Join 50+ Indian stores already using UnityMart</p>
+            <a href="#contact" class="btn-primary">
+                <i class="fas fa-rocket"></i> Start Your 3-Month Free Trial
+            </a>
+            <p style="margin-top: 1.5rem; font-size: 1rem; opacity: 0.9;">
+                No credit card required • Setup in 5 minutes • Cancel anytime
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about UnityMart</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item scroll-animate">
+                    <div class="faq-question">
+                        <span>How does the 3-month free trial work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Sign up for any paid plan (Basic, Pro, or Premium) and get 3 months completely free. No credit card required. After 3 months, you can choose to continue with monthly billing or cancel anytime with no penalty.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-animate">
+                    <div class="faq-question">
+                        <span>How quickly can I get started?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Setup takes just 5-10 minutes! Fill out a simple form with your store details, upload a few photos, and you're live. We'll help you every step of the way. Most stores are up and running the same day.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-animate">
+                    <div class="faq-question">
+                        <span>Do I need technical skills?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Not at all! If you can use WhatsApp, you can use UnityMart. Our dashboard is simple and intuitive. Plus, we provide free training and support to help you get the most out of the platform.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-animate">
+                    <div class="faq-question">
+                        <span>Can I upgrade or downgrade my plan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! You can upgrade or downgrade anytime. If you upgrade, you'll get access to new features immediately. If you downgrade, changes take effect at the start of your next billing cycle.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-animate">
+                    <div class="faq-question">
+                        <span>How do customers find my store?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Customers download the free UnityMart app and search for "Indian stores near me." Your store appears on the map with all your details. They can filter by features like fresh meat, halal certification, or delivery availability.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-animate">
+                    <div class="faq-question">
+                        <span>What if I have multiple store locations?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            The Premium plan (€99/month) includes multi-location management. You can manage all your stores from one dashboard, with separate listings, offers, and analytics for each location.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-animate">
+                    <div class="faq-question">
+                        <span>How do I update fresh meat availability?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Simply log into your dashboard and toggle "Fresh Meat Available" to ON. Customers who favorited your store get an instant notification. You can also specify what types of meat are available (chicken, mutton, fish, etc.).
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-animate">
+                    <div class="faq-question">
+                        <span>Can I cancel anytime?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, absolutely! There are no long-term contracts. Cancel anytime with one click from your dashboard. Your listing will remain active until the end of your current billing period.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-animate">
+                    <div class="faq-question">
+                        <span>What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We accept all major credit/debit cards (Visa, Mastercard, American Express), bank transfers, and Revolut. Payments are processed securely through Stripe. You'll receive an invoice via email each month.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-animate">
+                    <div class="faq-question">
+                        <span>Is there a setup fee?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            No setup fees, no hidden charges! The price you see is the price you pay. We believe in transparent, simple pricing. What you see is what you get.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Signup Section -->
+    <section id="contact" style="padding: 5rem 0; background: var(--white);">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2>Get Started Today</h2>
+                <p>Fill out this form and we'll set up your store within 24 hours</p>
+            </div>
+
+            <div style="max-width: 600px; margin: 0 auto; background: var(--bg-light); padding: 3rem; border-radius: 16px; box-shadow: var(--shadow-lg);">
+                <form id="signupForm">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Store Name *</label>
+                        <input type="text" required style="width: 100%; padding: 1rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Your Name *</label>
+                        <input type="text" required style="width: 100%; padding: 1rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Phone Number *</label>
+                        <input type="tel" required style="width: 100%; padding: 1rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email *</label>
+                        <input type="email" required style="width: 100%; padding: 1rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Store Address *</label>
+                        <textarea required rows="3" style="width: 100%; padding: 1rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;"></textarea>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Choose Your Plan *</label>
+                        <select required style="width: 100%; padding: 1rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                            <option value="">Select a plan...</option>
+                            <option value="free">FREE - €0/month</option>
+                            <option value="basic">BASIC - €19/month (3 months free)</option>
+                            <option value="pro">PRO - €49/month (3 months free) - RECOMMENDED</option>
+                            <option value="premium">PREMIUM - €99/month (3 months free)</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="#" style="color: var(--primary);">Terms of Service</a> and <a href="#" style="color: var(--primary);">Privacy Policy</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" style="width: 100%; background: var(--primary); color: var(--white); padding: 1.25rem; border: none; border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s;">
+                        <i class="fas fa-rocket"></i> Start My Free Trial
+                    </button>
+
+                    <p style="text-align: center; margin-top: 1rem; color: var(--text-light); font-size: 0.9rem;">
+                        We'll contact you within 24 hours to complete setup
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>UnityMart</h3>
+                    <p>Connecting Indian stores with customers across Ireland.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>For Store Owners</h3>
+                    <ul>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Get Started</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Store Dashboard</a></li>
+                        <li><a href="#">Training Videos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hello@unitymart.ie</li>
+                        <li><i class="fas fa-phone"></i> +353 1 234 5678</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Dublin, Ireland</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 UnityMart. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+
+                // Close all FAQs
+                faqQuestions.forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                });
+
+                // Open clicked FAQ if it wasn't active
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form Submission
+        document.getElementById('signupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your interest! We will contact you within 24 hours to complete your setup.');
+            // In production, this would send data to your backend
+        });
+
+        // Sticky Navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+            } else {
+                nav.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+
+</body>
+</html>
